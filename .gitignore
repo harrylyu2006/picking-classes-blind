@@ -13,3 +13,4 @@ data/private/
 **/private/
 runs/
 dist/
+deploy/public/

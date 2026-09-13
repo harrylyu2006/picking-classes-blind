@@ -2,7 +2,9 @@
 
 **A personal portfolio project about course selection among students studying away at NYU New York, Fall 2026.**
 
-**Status:** local implementation and synthetic demonstration. No participant findings, live survey, Google Sheet, public Looker Studio report, or GitHub publication are claimed. Start with [START HERE](START-HERE.md).
+**Status:** implemented and tested with a synthetic demonstration. Participant collection, live Qualtrics configuration, Google Sheets/Looker Studio setup, and deployment to your own VPS remain pending. Start with [START HERE](START-HERE.md).
+
+To host the HTML dashboard on your own server, follow [VPS deployment](docs/vps-deployment.md). The included Docker Compose configuration serves only the reviewed public files with Caddy and supports domain-based HTTPS.
 
 ## Question
 
@@ -48,5 +50,6 @@ uv run pcb run data/raw/qualtrics-export.csv --output runs/collection-final --lo
 - Versioned Python package, tests, environment lock, [methods lock](methods-lock.json), and [data dictionary](docs/data-dictionary.csv).
 - [One-page dashboard preview](demo/public/index.html), aggregate CSV tables, and [Looker Studio recipe](docs/looker-studio.md).
 - [Nine-day execution schedule and message drafts](docs/launch-plan.md).
+- [VPS deployment guide](docs/vps-deployment.md), Docker Compose configuration, and Caddy HTTP/HTTPS settings.
 
 Account setup, pilot participation, recruitment, collection, and publication remain real execution steps. Optional API ingestion/scheduled refresh is not implemented; the current workflow starts from an explicit CSV export. [Proposal source](https://claude.ai/code/artifact/af678318-ea6e-4834-9246-53a61d6851c1).

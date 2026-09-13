@@ -25,4 +25,4 @@ Independent review found and resolved: mean/median mismatch; methods lock from a
 
 The Qualtrics Advanced TXT file passed structural checks; actual import, consent/screener routing, carry-forward recodes, 0–10 export, numeric credit validation and anonymous settings must be verified in the user's account. NYU Qualtrics reached the NYU sign-in screen during this session. No survey was created or published, and no pilot or participant collection occurred.
 
-No Google Sheet, Looker Studio report, GitHub remote, public share link, email, recruitment post or scheduled automation was created. The dashboard is a local synthetic preview. These boundaries are also reflected in START-HERE and the launch record.
+At initial implementation completion, no Google Sheet, Looker Studio report, GitHub remote, public share link, email, recruitment post or scheduled automation had been created. A later user-authorized GitHub push and VPS configuration are covered by [the deployment verification record](vps-verification.md); survey collection and live account setup remain pending.

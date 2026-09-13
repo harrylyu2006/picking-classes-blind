@@ -1,0 +1,10 @@
+{$SITE_ADDRESS::80} {
+	root * /srv
+	encode zstd gzip
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer
+		Cache-Control "no-cache"
+	}
+	file_server
+}
