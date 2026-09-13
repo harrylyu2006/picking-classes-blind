@@ -1,0 +1,2 @@
+analysis_n,raw_n,excluded_n,exclusion_rate,median_duration_seconds,subgroup_min_n,cell_min_n,conclusion,limitations,data_kind
+50,60,10,0.16666666666666666,247.0,25,5,Synthetic demonstration with n = 50 analysis rows; not participant findings. No students have been surveyed in this demo.,"Convenience sample; self-reported, cross-sectional answers. These data cannot establish causation, represent all NYU students, or measure retention. Recommendation intention is not retention. Research-hours categories are ordered groups, not exact hours.",synthetic

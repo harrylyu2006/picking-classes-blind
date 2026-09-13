@@ -1,0 +1,24 @@
+[project]
+name = "picking-classes-blind"
+version = "0.1.0"
+description = "Reproducible survey QA and descriptive reporting for a personal portfolio project"
+requires-python = ">=3.11"
+dependencies = ["pandas>=2.2,<4"]
+
+[project.scripts]
+pcb = "picking_classes_blind.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-cov>=5,<8", "ruff>=0.9,<1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

@@ -1,0 +1,41 @@
+{
+  "rules_version": "1.0.0",
+  "raw_rows": 60,
+  "analysis_rows": 50,
+  "excluded_rows": 10,
+  "exclusion_rate": 0.16666666666666666,
+  "disposition_counts": {
+    "preview_test": 1,
+    "not_consented": 1,
+    "ineligible": 1,
+    "incomplete": 1,
+    "quarantined": 1,
+    "possible_dupe": 1,
+    "failed_attention": 1,
+    "speeder": 1,
+    "straightline": 1,
+    "logic_error": 1,
+    "analysis": 50
+  },
+  "flag_counts": {
+    "preview_test": 1,
+    "not_consented": 1,
+    "ineligible": 1,
+    "incomplete": 1,
+    "quarantined": 1,
+    "possible_dupe": 1,
+    "failed_attention": 1,
+    "speeder": 1,
+    "straightline": 1,
+    "logic_error": 1
+  },
+  "balanced": true,
+  "median_duration_seconds": 247.0,
+  "data_kind": "synthetic",
+  "generated_utc": "2026-09-13T15:00:15.341565+00:00",
+  "input_sha256": "fdcd131e6a1fad66a7e350e13836ddee90be625aaf58746c5d5e6935fbf46df2",
+  "methods_lock_sha256": null,
+  "python_version": "3.12.14",
+  "pandas_version": "3.0.5",
+  "seed": 20260913
+}

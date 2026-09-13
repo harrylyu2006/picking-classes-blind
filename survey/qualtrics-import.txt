@@ -1,0 +1,258 @@
+[[AdvancedFormat]]
+[[Block:Consent]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:C0]]
+Picking Classes Blind — Fall 2026
+
+Picking Classes Blind asks about how students studying away at NYU New York chose their courses for Fall 2026 and how they feel about their current schedules. This is a personal portfolio project, not an official NYU evaluation. It should take about 3–4 minutes.
+
+Taking part is voluntary. You can decline, skip a question, or close the survey at any time before submitting. You may see a reminder about an unanswered question, but you can continue without answering it. The final comment is optional. A consent choice is required to continue. Your decision to take part will not affect your classes or access to advising.
+
+The survey does not ask for your name, email, NYU ID, or contact details. Please do not put identifying information about yourself or anyone else in your comment. Responses will be used to create a portfolio report and dashboard showing summaries. Individual responses and raw comments will not be published. Once you submit, the project cannot identify your response to remove it on request.
+
+Answer based on your current schedule and your experience so far this term. There are no right or wrong opinions.
+
+I have read the information above and voluntarily agree to take part.
+[[AdvancedChoices]]
+[[Choice:1]]
+Yes, I agree
+[[Choice:2]]
+No, I do not agree
+
+[[Block:Eligibility]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:S1]]
+Are you studying away at NYU New York this semester (Fall 2026)?
+[[AdvancedChoices]]
+[[Choice:1]]
+Yes
+[[Choice:2]]
+No
+
+[[Block:Background]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:S2]]
+What is your home campus or site?
+[[AdvancedChoices]]
+[[Choice:1]]
+NYU Shanghai
+[[Choice:2]]
+NYU Abu Dhabi
+[[Choice:3]]
+Another NYU global site
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:B1]]
+What is your current year of undergraduate study?
+[[AdvancedChoices]]
+[[Choice:1]]
+1st year
+[[Choice:2]]
+2nd year
+[[Choice:3]]
+3rd year
+[[Choice:4]]
+4th year
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:B2]]
+Which option best describes your primary field of study?
+For more than one field, select the one you consider primary.
+[[AdvancedChoices]]
+[[Choice:1]]
+Computer Science or Engineering
+[[Choice:2]]
+Business
+[[Choice:3]]
+Natural sciences
+[[Choice:4]]
+Social sciences
+[[Choice:5]]
+Humanities
+[[Choice:6]]
+Undecided
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:B3]]
+Is this your first study-away term?
+[[AdvancedChoices]]
+[[Choice:1]]
+Yes
+[[Choice:2]]
+No
+
+[[Question:TE:SingleLine]]
+[[ID:B4]]
+How many credits are you enrolled in this term?
+Enter a number from 0 to 24. Decimal credits are permitted, for example 15.5.
+
+[[Block:Course-selection process]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:P1]]
+Roughly how many hours did you spend researching courses before you finalized your current schedule? Round to the nearest whole hour.
+[[AdvancedChoices]]
+[[Choice:1]]
+0–2 hours
+[[Choice:2]]
+3–5 hours
+[[Choice:3]]
+6–10 hours
+[[Choice:4]]
+11–20 hours
+[[Choice:5]]
+More than 20 hours
+
+[[Question:MC:MultipleAnswer:Vertical]]
+[[ID:P2]]
+Which sources did you use when choosing your courses? Select all that apply.
+[[AdvancedChoices]]
+[[Choice:1]]
+Albert course catalog
+[[Choice:2]]
+Course syllabi
+[[Choice:3]]
+Academic advisor
+[[Choice:4]]
+Upperclassmen or peers
+[[Choice:5]]
+Student group chats
+[[Choice:6]]
+Course-review sites
+[[Choice:7]]
+Professor's own webpage
+[[Choice:8]]
+Other
+
+[[PageBreak]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:P3]]
+Which one of those sources was most useful when choosing your courses?
+[[AdvancedChoices]]
+[[Choice:1]]
+Albert course catalog
+[[Choice:2]]
+Course syllabi
+[[Choice:3]]
+Academic advisor
+[[Choice:4]]
+Upperclassmen or peers
+[[Choice:5]]
+Student group chats
+[[Choice:6]]
+Course-review sites
+[[Choice:7]]
+Professor's own webpage
+[[Choice:8]]
+Other
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:P4]]
+How many times did you talk to an academic advisor about course selection?
+[[AdvancedChoices]]
+[[Choice:1]]
+0 times
+[[Choice:2]]
+1 time
+[[Choice:3]]
+2–3 times
+[[Choice:4]]
+4 or more times
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:P5]]
+Before registering, how worried were you that credits would not transfer back to your home campus as you expected?
+[[AdvancedChoices]]
+[[Choice:1]]
+Not at all worried
+[[Choice:2]]
+Slightly worried
+[[Choice:3]]
+Moderately worried
+[[Choice:4]]
+Very worried
+[[Choice:5]]
+Extremely worried
+
+[[Block:Current experience]]
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:O1]]
+How satisfied are you with the schedule you ended up with?
+[[AdvancedChoices]]
+[[Choice:1]]
+Very dissatisfied
+[[Choice:2]]
+Dissatisfied
+[[Choice:3]]
+Neither satisfied nor dissatisfied
+[[Choice:4]]
+Satisfied
+[[Choice:5]]
+Very satisfied
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:O2]]
+Did you add, drop, or swap any course after the term started?
+[[AdvancedChoices]]
+[[Choice:1]]
+No
+[[Choice:2]]
+Yes, one course
+[[Choice:3]]
+Yes, more than one course
+
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:O3]]
+How likely are you to recommend a study-away term to a peer?
+[[AdvancedChoices]]
+[[Choice:0]]
+0 — Not at all likely
+[[Choice:1]]
+1
+[[Choice:2]]
+2
+[[Choice:3]]
+3
+[[Choice:4]]
+4
+[[Choice:5]]
+5
+[[Choice:6]]
+6
+[[Choice:7]]
+7
+[[Choice:8]]
+8
+[[Choice:9]]
+9
+[[Choice:10]]
+10 — Extremely likely
+
+[[PageBreak]]
+[[Question:Matrix:SingleAnswer]]
+[[ID:A1]]
+How much do you agree or disagree with each statement?
+[[AdvancedChoices]]
+[[Choice:1]]
+I had enough information to judge course workload before registering.
+[[Choice:2]]
+I understood how these courses count toward my degree requirements.
+[[Choice:3]]
+For quality control, please select “Disagree” for this row.
+[[Choice:4]]
+I would choose the same schedule again.
+[[AdvancedAnswers]]
+[[Answer:1]]
+Strongly disagree
+[[Answer:2]]
+Disagree
+[[Answer:3]]
+Neither agree nor disagree
+[[Answer:4]]
+Agree
+[[Answer:5]]
+Strongly agree
+
+[[Question:TE:Essay]]
+[[ID:O4]]
+What is one thing that would have made course selection easier? Please do not include names, contact details, course sections, or other details that could identify you or someone else.
+This question is optional.

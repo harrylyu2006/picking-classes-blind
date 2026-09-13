@@ -1,0 +1,9 @@
+source_code,source,used_count,most_useful_count,denominator,usage_rate,most_useful_rate,data_kind
+1,Albert catalog,26,6,50,0.52,0.12,synthetic
+2,Syllabi,17,5,50,0.34,0.1,synthetic
+3,Academic advisor,20,5,50,0.4,0.1,synthetic
+4,Upperclassmen or peers,23,8,50,0.46,0.16,synthetic
+5,Student group chats,16,7,50,0.32,0.14,synthetic
+6,Course-review sites,22,4,50,0.44,0.08,synthetic
+7,Professor's own page,21,5,50,0.42,0.1,synthetic
+8,Other,23,10,50,0.46,0.2,synthetic

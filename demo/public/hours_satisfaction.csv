@@ -1,0 +1,6 @@
+hours_code,hours,n,median_satisfaction,data_kind
+1,0–2,8,2.0,synthetic
+2,3–5,11,3.0,synthetic
+3,6–10,11,3.0,synthetic
+4,11–20,6,1.0,synthetic
+5,More than 20,14,3.0,synthetic
