@@ -2,7 +2,7 @@
 
 **A personal portfolio project about course selection among students studying away at NYU New York, Fall 2026.**
 
-**Status:** implemented and tested with a synthetic demonstration. Participant collection, live Qualtrics configuration, and Google Sheets/Looker Studio setup remain pending. Start with [START HERE](START-HERE.md).
+**Status:** implemented and tested with a synthetic demonstration. A native Google Sheet and Looker Studio report have also been built and checked against the aggregate CSVs. The report remains private at the owner's request; this repository includes the runnable HTML demo and [native report build record](docs/looker-studio.md). Live Qualtrics configuration, the pilot, and participant collection remain pending. Start with [START HERE](START-HERE.md).
 
 ## Question
 
@@ -40,13 +40,13 @@ uv run pcb run data/raw/qualtrics-export.csv --output runs/collection-final --lo
 
 ## Findings and limits
 
-**Real findings: not yet available.** The delivered evidence is a tested data pipeline, QA outputs, and a dashboard demonstration. The survey cannot establish causal effects, represent all NYU students, or measure retention. Recommendation intention is a different outcome. Below n=25, subgroup charts are withheld; additional small-cell rules apply to both synthetic and participant outcome tables. The source view uses overall counts without demographic filters. No real row-level data or free text are intended for publication.
+**Real findings: not yet available.** The delivered evidence is a tested data pipeline, QA outputs, a public HTML demonstration, and a private native Looker Studio report connected to Google Sheets. The survey cannot establish causal effects, represent all NYU students, or measure retention. Recommendation intention is a different outcome. Below n=25, subgroup charts are withheld; additional small-cell rules apply to both synthetic and participant outcome tables. The source view uses overall counts without demographic filters. No real row-level data or free text are intended for publication.
 
 ## Deliverables
 
 - [Qualtrics import text](survey/qualtrics-import.txt), [setup guide](docs/qualtrics-setup.md), and [pilot checklist](docs/pilot-checklist.md).
 - Versioned Python package, tests, environment lock, [methods lock](methods-lock.json), and [data dictionary](docs/data-dictionary.csv).
-- [One-page dashboard preview](demo/public/index.html), aggregate CSV tables, and [Looker Studio recipe](docs/looker-studio.md).
+- [One-page HTML dashboard](demo/public/index.html), aggregate CSV tables, and a completed private native Looker Studio report; see the [build record and reproduction guide](docs/looker-studio.md).
 - [Nine-day execution schedule and message drafts](docs/launch-plan.md).
 
-Account setup, pilot participation, recruitment, collection, and publication remain real execution steps. Optional API ingestion/scheduled refresh is not implemented; the current workflow starts from an explicit CSV export. [Proposal source](https://claude.ai/code/artifact/af678318-ea6e-4834-9246-53a61d6851c1).
+Qualtrics setup, pilot participation, recruitment, collection, and review before publishing participant findings remain real execution steps. Optional API ingestion/scheduled refresh is not implemented; the current workflow starts from an explicit CSV export. The native report requires a manual release-status check whenever its aggregate worksheets are refreshed. [Proposal source](https://claude.ai/code/artifact/af678318-ea6e-4834-9246-53a61d6851c1).

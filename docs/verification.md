@@ -24,8 +24,28 @@ Independent review found and resolved: mean/median mismatch; methods lock from a
 
 The version 1.1 amendment removes that campus fallback in favor of a visible withholding notice, and removes synthetic suppression exemptions. New regressions cover both data kinds, small samples, mixed default release states, and rendering. An independent review of all changed code and tests approved the amendment without findings. The regenerated QA output still reconciles 60 raw = 50 analysis + 10 excluded.
 
+## Native Google Sheets and Looker Studio
+
+Built and checked on September 13, 2026, using only the released synthetic aggregate files. The native report remains private at the owner's request; its identifiers are not included in this public record.
+
+| Check | Result |
+|---|---|
+| Native Google Sheet | Six worksheets imported and visually inspected; all 178 cells matched the verified source workbook and CSVs |
+| Worksheet row counts | `summary`: 1; `sources`: 8; `satisfaction`: 5; `hours_satisfaction`: 5; `chart_status`: 4; `campus_satisfaction`: 0, with headers only |
+| Embedded data sources | Connected `summary`, `sources`, `hours_satisfaction`, and `chart_status`; no campus count source connected |
+| QA scorecards | MAX aggregation; 50 analysis rows, 247 seconds median analysis-row duration, 10 excluded out of 60 raw, and 16.7% exclusion rate |
+| Source table with bars | All eight categories and all 16 percentage values matched `sources.csv`; numeric category order; matching 0–100% scale references |
+| Hours table with bars | Five ordered categories, each with median satisfaction 3 and n=10; median scale 0–5; n displayed as a plain number |
+| Release status and notice | Native status table shows three available tables and one suppressed table; campus panel states the exact small-cell withholding reason |
+| Interpretation | Synthetic notice and source-randomness caption; balanced outcome/grouping fixture identified; no causal, representative, or retention claim |
+| Interactions | No demographic filters, cross-filter interactions, or drill-downs |
+| Repository reference | Native footer displays the full GitHub URL as plain text; the public HTML footer has a verified clickable link |
+| Access settings | Report link remains **Restricted**; Google Sheets shows **Private to only me**. Public viewer access was not enabled. |
+
+The native components are scorecards and tables with bars, not the HTML preview embedded in a report. The source and hours scale references use the table style setting named **Show target**; these mark scale limits rather than performance goals. The connected status table does not control other chart visibility. The campus notice is static text, so future refreshes require manual gate checks and removal of stale charts as described in the [build and refresh guide](looker-studio.md).
+
 ## Not live-verified
 
 The Qualtrics Advanced TXT file passed structural checks; actual import, consent/screener routing, carry-forward recodes, 0–10 export, numeric credit validation and anonymous settings must be verified in the user's account. NYU Qualtrics reached the NYU sign-in screen during this session. No survey was created or published, and no pilot or participant collection occurred.
 
-At initial implementation completion, no Google Sheet, Looker Studio report, GitHub remote, public share link, email, recruitment post or scheduled automation had been created. Survey collection and live account setup remain pending.
+At initial implementation completion, no Google Sheet, Looker Studio report, GitHub remote, public share link, email, recruitment post or scheduled automation had been created. The Google Sheet, native report, and public GitHub repository were subsequently created. The repository now uses `main` as its default branch. The report remains private; anonymous public viewing has not been tested. Qualtrics setup, the pilot, and participant collection are still pending. No email or recruitment post has been sent, and no scheduled automation has been created.
