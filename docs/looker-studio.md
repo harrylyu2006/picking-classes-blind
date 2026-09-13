@@ -1,6 +1,6 @@
 # Native Looker Studio report
 
-**Built and verified on September 13, 2026.** A native Google Sheet supplies a one-page native Looker Studio report, **Picking Classes Blind | Synthetic Survey QA**. The report remains private at the owner's request, and its cloud identifiers are not published here. The [HTML dashboard](../demo/public/index.html) is the public, reproducible demonstration. Google's current interface calls the product **Data Studio**; this project retains the proposal's Looker Studio name.
+**Built and verified on September 13, 2026.** A native Google Sheet supplies a one-page native Looker Studio report, **Picking Classes Blind | Synthetic Survey QA**. [Open the native report](https://datastudio.google.com/reporting/8997d2e1-4538-44c5-92bd-4895674be52c/page/1Ln8F). The connected Google Sheet remains private. The [HTML dashboard](../demo/public/index.html) is the public, reproducible demonstration. Google's current interface calls the product **Data Studio**; this project retains the proposal's Looker Studio name.
 
 This is a synthetic software demonstration. No students have been surveyed, and none of the values below are participant findings.
 
@@ -52,7 +52,7 @@ Keep the synthetic notice beside the title and conclusion. For a reviewed partic
 For each refresh:
 
 1. Run the pipeline and review `qa_report.md` and `public/chart_status.csv` before changing the Sheet. Preserve the current source files and report version for comparison.
-2. Clear the existing source and hours data charts before replacing worksheets, so a withheld or incomplete new release cannot leave old bars visible. Keep the report private during the update.
+2. Clear the existing source and hours data charts before replacing worksheets, so a withheld or incomplete new release cannot leave old bars visible. Temporarily restrict report access during the update, then restore viewer access only after verification.
 3. Replace worksheet contents while retaining headers. Import only the new run's released aggregate tables. Header-only tables mean unavailable, not zero respondents; never fill them from private counterparts.
 4. Apply every `chart_status` gate. Restore charts only for available tables, replace unavailable charts with their current reasons, and update the campus notice manually. Recheck the QA cards, conclusion, sample size, and data-kind label against the same run.
 5. Compare each displayed value, category order, denominator, and scale with the new CSVs. Check blank-versus-zero behavior and confirm no old chart or cached claim remains before anyone views the refreshed report.
@@ -63,6 +63,6 @@ The connector reads changes to the Sheet; it does not run the Python pipeline or
 
 ## Access and verification
 
-The report is private by owner preference; no public viewer URL is supplied. Owner credentials can let an authorized report viewer see connected data without direct access to the Sheet, so only reviewed aggregate worksheets belong behind the report. [Google's credential explanation](https://docs.cloud.google.com/data-studio/connect-to-google-sheets).
+The [native viewer URL](https://datastudio.google.com/reporting/8997d2e1-4538-44c5-92bd-4895674be52c/page/1Ln8F) is supplied for sharing. Sharing is saved as **Unlisted — anyone on the internet with the link can view**, with **Viewer** access. Anonymous access has not been independently tested. Owner credentials can let an authorized report viewer see connected data without direct access to the Sheet, so only reviewed aggregate worksheets belong behind the report. [Google's credential explanation](https://docs.cloud.google.com/data-studio/connect-to-google-sheets).
 
-The [verification record](verification.md) distinguishes the native build checks from the local pipeline tests. If access is broadened later, review the rendered viewer experience and permissions first. The repository's local code does not create a cloud report or change its sharing settings.
+The [verification record](verification.md) distinguishes the native build checks from the local pipeline tests. Before broadening access further or replacing data, review the rendered viewer experience and permissions. The repository's local code does not create a cloud report or change its sharing settings.
