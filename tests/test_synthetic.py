@@ -39,3 +39,19 @@ def test_demo_accepts_custom_size_at_least_twelve_and_rejects_smaller():
     assert clean_responses(make_synthetic(n=12)).qa["analysis_rows"] == 2
     with pytest.raises(ValueError, match="12"):
         make_synthetic(n=11)
+
+
+def test_default_demo_balances_outcomes_and_hours_but_keeps_campus_cells_small():
+    analysis = clean_responses(make_synthetic()).analysis
+    assert analysis["O1"].value_counts().sort_index().tolist() == [10, 10, 10, 10, 10]
+    assert analysis["P1"].value_counts().sort_index().tolist() == [10, 10, 10, 10, 10]
+    campus_counts = analysis.groupby(["S2", "O1"]).size()
+    assert campus_counts.between(1, 4).any()
+
+
+@pytest.mark.parametrize("n", [12, 35, 60, 103])
+def test_engineered_demo_sizes_preserve_exactly_ten_exclusions(n):
+    result = clean_responses(make_synthetic(n=n))
+    assert result.qa["analysis_rows"] == n - 10
+    assert result.qa["excluded_rows"] == 10
+    assert result.qa["balanced"] is True

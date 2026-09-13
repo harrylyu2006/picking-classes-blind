@@ -19,6 +19,7 @@ h2{font:24px/1.2 Georgia,serif;margin:8px 0}.sub{font-size:12px;line-height:1.5;
 .source{margin-bottom:15px}.source-name{font-size:12px;font-weight:600;margin-bottom:3px}.bar-row{display:flex;align-items:center;gap:8px;height:17px}.track{height:7px;background:#e2e4d9;flex:1}.fill{height:100%;background:var(--green)}.useful{background:var(--orange)}.value{font:11px/1.2 'Helvetica Neue',sans-serif;width:72px;text-align:right;white-space:nowrap}
 .campus{margin:14px 0}.campus-label{font-size:12px;margin-bottom:5px}.stack{height:19px;display:flex;background:#e0e3d8}.segment{height:100%;display:block}.scale{display:flex;justify-content:space-between;font-size:10px;margin-top:7px;color:var(--muted)}
 .hours-row{display:grid;grid-template-columns:84px 1fr 68px;align-items:center;gap:10px;font-size:11px;margin:13px 0}.hours-row .track{height:9px}.note{background:#e5e8da;padding:24px 28px;margin-top:26px;border-left:3px solid var(--green)}.note h2{font-size:25px}.note p{max-width:980px;font-size:13px}.muted-box{padding:20px;background:#e9e9de;font-size:13px}
+.withheld{border-left:3px solid var(--orange);color:#773316}
 footer{display:flex;justify-content:space-between;gap:20px;margin-top:22px;font-size:11px;color:var(--muted)}a{color:var(--green);text-underline-offset:3px}a:focus-visible{outline:2px solid var(--orange);outline-offset:4px}.links{display:flex;gap:18px;flex-wrap:wrap}
 details{font-size:12px;margin-top:15px}summary{cursor:pointer}table{width:100%;border-collapse:collapse;margin-top:8px}th,td{text-align:left;border-bottom:1px solid #cbd0c3;padding:6px}
 @media(max-width:760px){main{padding:24px 20px}.layout{grid-template-columns:1fr;gap:24px}.sources{grid-row:auto}header{display:block}.edition{text-align:left;margin-top:14px}.stats{grid-template-columns:1fr 1fr;gap:18px}.stat:nth-child(3){border:0;padding-left:0}.number{font-size:32px}footer{display:block}.links{margin-top:12px}}
@@ -85,17 +86,25 @@ def render_dashboard(tables: dict[str, pd.DataFrame], qa: dict, *, synthetic: bo
         if len(tables["sources"])
         else (f'<div class="muted-box">{_reason(tables, "sources")}</div>')
     )
+    sources_sub = (
+        "Share of analysis respondents. Multiple sources may be used; "
+        "only one can be most useful."
+    )
+    if synthetic:
+        sources_sub += (
+            " Source choices are uniformly sampled at random; "
+            "these synthetic values are not participant findings."
+        )
     campus = tables["campus_satisfaction"]
-    overall = tables["satisfaction"]
+    satisfaction_sub = "Schedule satisfaction by home campus."
     if len(campus):
         satisfaction = _distribution(campus, True)
-        satisfaction_sub = "Schedule satisfaction by home campus. Each row sums to 100%."
-    elif len(overall):
-        satisfaction = _distribution(overall, False)
-        satisfaction_sub = "Overall distribution. " + _reason(tables, "campus_satisfaction")
+        satisfaction_sub += " Each row sums to 100%."
     else:
-        satisfaction = f'<div class="muted-box">{_reason(tables, "satisfaction")}</div>'
-        satisfaction_sub = "Schedule satisfaction · 1–5 scale"
+        satisfaction = (
+            '<div class="muted-box withheld" role="note"><strong>'
+            f'{_reason(tables, "campus_satisfaction")}</strong></div>'
+        )
     hours = []
     for row in tables["hours_satisfaction"].itertuples():
         score = f"{row.median_satisfaction:.2f}" if row.n else "—"
@@ -122,7 +131,7 @@ def render_dashboard(tables: dict[str, pd.DataFrame], qa: dict, *, synthetic: bo
 <div class="stat"><div class="number">{qa["excluded_rows"]} <small>/ {qa["raw_rows"]}</small></div><div class="caption">Excluded from analysis</div></div>
 <div class="stat"><div class="number">{qa["exclusion_rate"]:.1%}</div><div class="caption">Excluded / raw · rows reconcile</div></div></section>
 <div class="layout"><section class="panel sources"><div class="eyebrow">01 / Information sources</div>
-<h2>Used often. Useful most?</h2><p class="sub">Share of analysis respondents. Multiple sources may be used; only one can be most useful.</p>
+<h2>Used often. Useful most?</h2><p class="sub">{sources_sub}</p>
 <div class="key"><span>Used</span><span>Most useful</span></div>{sources}</section>
 <section class="panel"><div class="eyebrow">02 / The final schedule</div><h2>How did it feel?</h2>
 <p class="sub">{satisfaction_sub}</p>{satisfaction}</section>
@@ -130,6 +139,7 @@ def render_dashboard(tables: dict[str, pd.DataFrame], qa: dict, *, synthetic: bo
 <p class="sub">Median satisfaction / 5, with each group's n. Descriptive association only.</p>{hours_chart}</section></div>
 <section class="note"><div class="eyebrow">04 / What these numbers can say</div><h2>Keep the conclusion proportional.</h2>
 <p>{_e(summary.conclusion)}</p><p>{_e(summary.limitations)}</p></section>
-<footer><span>Fixed QA rules · aggregate tables only · no individual responses</span><nav class="links" aria-label="Download tables">
+<footer><span>Fixed QA rules · aggregate tables only · no individual responses</span><nav class="links" aria-label="Project source and aggregate tables">
+<a href="https://github.com/harrylyu2006/picking-classes-blind">View source on GitHub ↗</a>
 <a href="sources.csv">Source data ↗</a><a href="summary.csv">Summary ↗</a><a href="chart_status.csv">Chart availability ↗</a></nav></footer>
 </main></body></html>"""

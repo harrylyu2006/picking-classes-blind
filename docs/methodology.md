@@ -1,6 +1,6 @@
 # Picking Classes Blind: prospective methodology
 
-Version 1.0 · Prepared before collection of real responses · Personal portfolio project
+Version 1.1 · Prepared before collection of real responses · Personal portfolio project
 
 This is a prospective plan for a new observational survey. No real responses or findings are asserted here. Save and timestamp this plan with the final instrument before opening production collection, and preserve its version or commit identifier in the report. A local plan is not a registration in an external registry; describe it as “preregistered” only if a timestamped registration was actually completed before data access.
 
@@ -75,7 +75,7 @@ The primary results are descriptive; no hypothesis-test or causal-model result i
 1. **Data-quality summary:** show retained analysis n, median valid completion duration among analysis records, and the number and percentage of records assigned to each disposition. Specify the denominator of the excluded percentage as all parsed raw response records; show a separate quality-rule count if discussing only attention, speed, straightlining, duplicates, and logic checks.
 2. **Source use versus most useful:** for each source, P2 usage is the number of analysis respondents who selected it divided by analysis n. P3 most-useful share is the number who selected it as the single most useful divided by analysis n. Each participant contributes at most once to a source-use count. P2 percentages can sum above 100%; P3 shares sum to 100% before rounding and privacy suppression. The P3 share is a share of all respondents, not a usefulness rating among users of that source.
 3. **Schedule satisfaction:** show the count and percentage for each O1 category. With analysis n at least 25 and privacy requirements satisfied, an optional home-campus view shows the same distribution within each campus, using that campus's sample as its denominator. Small-group comparisons are exploratory and cannot establish campus differences.
-4. **Research time and satisfaction:** with analysis n at least 25 and privacy requirements satisfied, show the median of O1 within each P1 category and its group n. Do not infer that more research improves or worsens satisfaction. If this chart is withheld, show its unavailability reason. The satisfaction panel may use the overall O1 distribution if available; no separate overall P1 fallback is implemented.
+4. **Research time and satisfaction:** with analysis n at least 25 and privacy requirements satisfied, show the median of O1 within each P1 category and its group n. Do not infer that more research improves or worsens satisfaction. Withheld campus and research-time panels show their unavailability reasons. The overall O1 distribution remains a separate aggregate export when available; it does not replace a withheld campus panel. No separate overall P1 fallback is implemented.
 5. **Conclusion and limits:** state the real analysis n and collection window, describe the largest safely reportable descriptive patterns, and name the convenience sample, small size, self-report, timing, selection effects, and absence of causal or retention evidence. A zero-result run states that findings are not available.
 
 O2, O3, P4, P5, and the three substantive A1 rows can receive overall descriptive summaries as secondary context when disclosure rules permit. They are not a composite scale and do not determine exclusions. O4 may inform an exploratory theme summary after privacy review, with the number of comments and coding approach documented; blank comments are not interpreted as “no problem.” No unplanned favorable subgroup or open-text anecdote substitutes for the primary summaries.
@@ -84,7 +84,7 @@ O2, O3, P4, P5, and the three substantive A1 rows can receive overall descriptiv
 
 Do not publish real row-level data, raw comments, or response/audit identifiers. The implemented release rules operate on complete output tables rather than replacing small values with zeros:
 
-| Output | Rule for real participant data |
+| Output | Rule for participant and synthetic data |
 |---|---|
 | All participant-outcome summaries | Withhold when analysis n is below 5. QA and the insufficient-data status may still be shown. |
 | Overall O1 satisfaction distribution | Withhold the entire table when any nonzero response-category count is below 5, or analysis n is below 5. |
@@ -96,7 +96,9 @@ The source rule is narrower than a blanket small-cell suppression policy: an ind
 
 Withheld tables are absent or explicitly marked unavailable, never displayed as zero-response groups. Do not add filters, drill-down, downloads, or extra overlapping tables that recreate suppressed subgroup cells. Do not create many crossed demographic views for this small convenience sample. For analysis n below 25, omit all cross-tabulations even if some individual cells would exceed 5.
 
-Synthetic demonstration charts may show small counts only with an unmistakable synthetic-data label. They remain subject to the n = 25 gate for subgroup views so the demo exercises the same sample-size rule. No synthetic result is evidence about real students.
+Synthetic demonstrations use exactly the same release rules, including the n = 25 subgroup gate and nonzero outcome-cell threshold of 5. The default fixture deliberately balances overall satisfaction and research-time groups while keeping campus-by-satisfaction cells below 5. It therefore publishes the sources, overall satisfaction, and research-time tables while visibly withholding the campus chart with the notice: **Withheld: at least one nonzero cell is below five.** Source selections remain randomly sampled; the outcome and grouping values are engineered to test release rules. No synthetic result is evidence about real students.
+
+The [version 1.1 amendment](methods-history/2026-09-13-v1.1-amendment.md) records this change from the initial synthetic-data exemption and preserves the original methods lock. No participant data were collected or analyzed before the amendment.
 
 ## Readiness and deviations
 

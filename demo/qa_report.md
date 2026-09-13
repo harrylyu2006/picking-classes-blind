@@ -1,8 +1,8 @@
 # QA report — synthetic
 
-Generated UTC: 2026-09-13T15:00:15.341565+00:00
+Generated UTC: 2026-09-13T15:44:18.756355+00:00
 
-Input SHA-256: `fdcd131e6a1fad66a7e350e13836ddee90be625aaf58746c5d5e6935fbf46df2`
+Input SHA-256: `d1db5f1f6197e163d1276e4f29c748b80f47970234870a395b8f191427babb7c`
 
 Raw **60** = analysis **50** + excluded **10**. Balanced: **True**.
 

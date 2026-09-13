@@ -23,7 +23,7 @@ def build_tables(
     status = []
     tables = {}
     source_rows = []
-    if n >= MIN_CELL_N or (synthetic and n > 0):
+    if n >= MIN_CELL_N:
         for code, label in SOURCE_LABELS.items():
             used = sum(code in choices for choices in analysis["P2"])
             useful = int((analysis["P3"] == code).sum())
@@ -51,7 +51,7 @@ def build_tables(
     satisfaction = pd.DataFrame(columns=["satisfaction", "count", "denominator", "share"])
     if n:
         counts = analysis["O1"].value_counts().reindex(range(1, 6), fill_value=0)
-        if synthetic or (n >= MIN_CELL_N and not _sparse(counts)):
+        if n >= MIN_CELL_N and not _sparse(counts):
             satisfaction = pd.DataFrame(
                 {
                     "satisfaction": counts.index,
@@ -89,11 +89,11 @@ def build_tables(
                     [CAMPUS_LABELS[int(code)], score, count, len(group), count / len(group)]
                 )
         candidate = pd.DataFrame(campus_rows, columns=campus.columns)
-        if synthetic or not _sparse(candidate["count"]):
+        if not _sparse(candidate["count"]):
             campus = candidate
             campus_reason = ""
         else:
-            campus_reason = "Whole campus chart withheld: at least one nonzero cell is below five."
+            campus_reason = "Withheld: at least one nonzero cell is below five."
         hours_rows = []
         for code, label in HOURS_LABELS.items():
             group = analysis[analysis["P1"] == code]
@@ -101,7 +101,7 @@ def build_tables(
                 [code, label, len(group), float(group["O1"].median()) if len(group) else None]
             )
         candidate_hours = pd.DataFrame(hours_rows, columns=hours.columns)
-        if synthetic or not _sparse(candidate_hours["n"]):
+        if not _sparse(candidate_hours["n"]):
             hours = candidate_hours
             hours_reason = ""
         else:

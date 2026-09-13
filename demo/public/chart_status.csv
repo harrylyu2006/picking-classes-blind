@@ -1,5 +1,5 @@
 chart,status,reason,data_kind
 sources,available,,synthetic
 satisfaction,available,,synthetic
-campus_satisfaction,available,,synthetic
+campus_satisfaction,suppressed,Withheld: at least one nonzero cell is below five.,synthetic
 hours_satisfaction,available,,synthetic

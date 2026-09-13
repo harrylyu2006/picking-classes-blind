@@ -2,7 +2,7 @@
 
 You can run and inspect this project now. Real survey collection has not started.
 
-1. Open [the synthetic dashboard](demo/public/index.html), then [its QA report](demo/qa_report.md). The sample is artificial and exercises all primary exclusion buckets.
+1. Open [the synthetic dashboard](demo/public/index.html), then [its QA report](demo/qa_report.md). The sample is artificial and exercises all primary exclusion buckets plus both available and withheld charts under the participant disclosure rules. The [version 1.1 amendment](docs/methods-history/2026-09-13-v1.1-amendment.md) records the change and preserves the original baseline lock.
 2. Sign in to NYU Qualtrics. Import [qualtrics-import.txt](survey/qualtrics-import.txt) into a **new** survey. Follow [the setup guide](docs/qualtrics-setup.md) to configure consent/screening, P3 carry-forward, export tags, recodes, and privacy. TXT import creates content; it does not prove routing or privacy settings are correct.
 3. Complete [the five-person pilot checklist](docs/pilot-checklist.md). Keep pilot responses in a separate survey copy. Resolve whether year options 1–4 and P2 source choices cover the actual target students. Check the live 0–10 recommendation export and numeric B4 validation.
 4. Record the actual collection window, project contact and raw-data deletion date in [the launch record](docs/launch-record.md). Export the final Qualtrics survey definition as `survey/final-survey.qsf` after setup, and commit it locally with the methods baseline before recruitment.

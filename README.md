@@ -25,7 +25,7 @@ uv run pcb demo --output runs/my-demo
 open runs/my-demo/public/index.html
 ```
 
-The shipped [dashboard preview](demo/public/index.html) and [QA report](demo/qa_report.md) use **synthetic data**. The deterministic default fixture contains 60 rows, 50 retained rows, and one primary example for each of 10 exclusion dispositions. These counts test software and are not evidence about students.
+The shipped [dashboard preview](demo/public/index.html) and [QA report](demo/qa_report.md) use **synthetic data**. The deterministic default fixture contains 60 rows, 50 retained rows, and one primary example for each of 10 exclusion dispositions. Synthetic and participant runs use the same suppression rules: sources and research-time charts are available, while the campus chart displays **Withheld: at least one nonzero cell is below five.** Source choices are uniformly random; outcome and grouping values are engineered to exercise release rules. These counts test software and are not evidence about students.
 
 After the pilot and launch record are complete, freeze the production version before recruitment. Preserve the supplied baseline lock:
 
@@ -40,7 +40,7 @@ uv run pcb run data/raw/qualtrics-export.csv --output runs/collection-final --lo
 
 ## Findings and limits
 
-**Real findings: not yet available.** The delivered evidence is a tested data pipeline, QA outputs, and a dashboard demonstration. The survey cannot establish causal effects, represent all NYU students, or measure retention. Recommendation intention is a different outcome. Below n=25, subgroup charts are withheld; additional small-cell rules apply to real outcome tables. The source view uses overall counts without demographic filters. No real row-level data or free text are intended for publication.
+**Real findings: not yet available.** The delivered evidence is a tested data pipeline, QA outputs, and a dashboard demonstration. The survey cannot establish causal effects, represent all NYU students, or measure retention. Recommendation intention is a different outcome. Below n=25, subgroup charts are withheld; additional small-cell rules apply to both synthetic and participant outcome tables. The source view uses overall counts without demographic filters. No real row-level data or free text are intended for publication.
 
 ## Deliverables
 

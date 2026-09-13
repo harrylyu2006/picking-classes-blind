@@ -13,8 +13,11 @@ def make_synthetic(seed: int = 20260913, n: int = 60) -> pd.DataFrame:
     The last ten records cover preview, no consent, ineligible, incomplete,
     quarantine, duplicate, attention, speeding, straightlining and logic error,
     respectively. The duplicate repeats the first synthetic ID. Default n=60
-    therefore yields 50 analysis rows and 10 exclusive exclusions. Distribution
-    patterns are arbitrary demonstration values, never evidence about students.
+    therefore yields 50 analysis rows and 10 exclusive exclusions. Eligible
+    outcomes and hours are balanced, while campus outcome cells are deliberately
+    small, so the default demo exercises both release and withholding. Source
+    subsets are uniformly sampled at each random size (2-5); most-useful is
+    sampled uniformly from each selected subset. None are evidence about students.
     """
     if isinstance(n, bool) or not isinstance(n, int) or n < 12:
         raise ValueError("Synthetic demo size n must be an integer of at least 12.")
@@ -49,6 +52,11 @@ def make_synthetic(seed: int = 20260913, n: int = 60) -> pd.DataFrame:
                 "A1_4": rng.randint(1, 5),
             }
         )
+    # Engineer the release-rule fixture without changing random source choices
+    # or the ten injected exclusions. Every default hours group contains two
+    # examples of each satisfaction score; campus cells remain below five.
+    for index, row in enumerate(rows[:-10]):
+        row.update({"S2": index % 3 + 1, "P1": (index // 5) % 5 + 1, "O1": index % 5 + 1})
     injections = [
         {"Status": 1},
         {"C0": 2},
